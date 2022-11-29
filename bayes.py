@@ -1,14 +1,31 @@
 import gensim
 import gensim.downloader
+import dat
 import csv
 
 # Change to false for divergent task
 closest = True
 # Some words in the dataset shouldn't be considered
 excluded_words = {"ll"}
+# Change to false to use dat model
+word2vecModel = True
 
-model1 = gensim.downloader.load("word2vec-google-news-300")
+
+model1 = (
+    gensim.downloader.load("word2vec-google-news-300")
+    if word2vecModel
+    else dat.Model("glove.840B.300d.txt", "words.txt")
+)
 print("finished model setup")
+
+def checkWord(word):
+    """
+    Checks if the given word is valid in our model
+    """
+    if word2vecModel:
+        return word if model1.has_index_for(word) else None
+    else:
+        return model1.validate(word)
 
 word_frequencies = {}
 with open("SUBTLEXfreqPoS.csv", mode="r") as file:
@@ -20,10 +37,11 @@ with open("SUBTLEXfreqPoS.csv", mode="r") as file:
         if (
             "Noun" in word["All_PoS_SUBTLEX"]
             and word["Word"] not in excluded_words
-            and model1.has_index_for(word["Word"])
         ):
-            word_frequencies[word["Word"]] = float(word["SUBTLWF"])
-            total += float(word["SUBTLWF"])
+            word_name = checkWord(word["Word"])
+            if word_name is not None:
+                word_frequencies[word_name] = float(word["SUBTLWF"])
+                total += float(word["SUBTLWF"])
 for (word, value) in word_frequencies.items():
     word_frequencies[word] = value / total
 
@@ -37,10 +55,17 @@ while True:
     correct = input("Correct: ")
 
     def find_similarity(word):
-        if closest:
-            return sum((model1.similarity(word, given) for given in given_words))
+        if word2vecModel:
+            if closest:
+                return sum((model1.similarity(word, given) for given in given_words))
+            else:
+                return sum((1 - model1.similarity(word, given) for given in given_words))
         else:
-            return sum((1 - model1.similarity(word, given) for given in given_words))
+            if closest:
+                return sum((1 - model1.distance(word, given) for given in given_words))
+            else:
+                return sum((model1.distance(word, given) for given in given_words))
+                
 
     similarity_total = sum((find_similarity(word) for word in word_frequencies.keys()))
 
