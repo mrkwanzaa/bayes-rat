@@ -2,6 +2,7 @@ import gensim
 import gensim.downloader
 import dat
 import csv
+import numpy as np
 
 # Change to false for divergent task
 closest = True
@@ -43,7 +44,7 @@ with open("SUBTLEXfreqPoS.csv", mode="r") as file:
                 word_frequencies[word_name] = float(word["SUBTLWF"])
                 total += float(word["SUBTLWF"])
 for (word, value) in word_frequencies.items():
-    word_frequencies[word] = value / total
+    word_frequencies[word] = -1 * np.log(value / total)
 
 print("finished importing frequencies")
 
@@ -71,7 +72,7 @@ while True:
 
     freq_normalizer = sum(
         (
-            prior * (find_similarity(word) / similarity_total)
+            (prior * find_similarity(word) / similarity_total)
             for (word, prior) in word_frequencies.items()
         )
     )
@@ -84,10 +85,6 @@ while True:
                 freq * (find_similarity(hypothesis) / similarity_total)
             ) / freq_normalizer
             probs[hypothesis] = value
-    print(find_similarity(correct) / similarity_total)
-    print(word_frequencies[correct])
     print("correct: " + str(probs[correct]))
-    result = max(probs, key=probs.get)
-    print(find_similarity(result) / similarity_total)
-    print(word_frequencies[result])
-    print(result + ": " + str(probs[result]))
+    sorted_results = sorted(probs.items(), key=lambda x: x[1], reverse=True)
+    print(sorted_results[:5])
