@@ -41,6 +41,17 @@ for i in range(len(solutions)):
   pairs.append(value)
 
 # write to jsonl file
-with open("data.json", 'w') as f:
+with open("data.jsonl", 'w') as f:
     for item in pairs:
         f.write(json.dumps(item) + "\n")
+
+# create a seperate test file with prompts not in data_prepared
+with open('data_prepared.jsonl', 'r') as f:
+  for line in f:
+    for pair in pairs:
+      if json.dumps(pair['prompt']) in line:
+        pairs.remove(pair)
+
+with open("test_data.jsonl", 'w') as f:
+    for item in pairs:
+        f.write(json.dumps(item['prompt']) + "\n")
