@@ -3,14 +3,22 @@ import gensim.downloader
 import dat
 import csv
 import numpy as np
+import json
 
 # Change to false for divergent task
-closest = True
+closest = False
 # Some words in the dataset shouldn't be considered
 excluded_words = {"ll"}
 # Change to false to use dat model
 word2vecModel = True
 
+# Issues: inv negative log still doesn't work great
+# Dat model is missing some prompt words (at least swiss)
+# Q: do we want top 5 for gpt (can re run)
+# TODO write methods section about gpt3 and bayes?
+
+# Look at different distance metrics
+# Get methods done for tuesday
 
 model1 = (
     gensim.downloader.load("word2vec-google-news-300")
@@ -43,27 +51,31 @@ with open("SUBTLEXfreqPoS.csv", mode="r") as file:
             if word_name is not None:
                 word_frequencies[word_name] = float(word["SUBTLWF"])
                 total += float(word["SUBTLWF"])
+
 for (word, value) in word_frequencies.items():
-    word_frequencies[word] = -1 * np.log(value / total)
+    word_frequencies[word] =  1 / (-1 * np.log(value / total))
 
 print("finished importing frequencies")
 
-while True:
-    given_words = []
-    given_words.append(input("Word 1: "))
-    given_words.append(input("Word 2: "))
-    given_words.append(input("Word 3: "))
-    correct = input("Correct: ")
+prompts = []
+
+with open('bayes_test_data.jsonl', 'r') as f:
+  for line in f:
+    prompts.append(json.loads(line))
+
+solutions = []
+
+for given_words in prompts:
 
     def find_similarity(word):
         if word2vecModel:
             if closest:
                 return sum((model1.similarity(word, given) for given in given_words))
             else:
-                return sum((1 - model1.similarity(word, given) for given in given_words))
+                return sum(((1 - model1.similarity(word, given)) for given in given_words))
         else:
             if closest:
-                return sum((1 - model1.distance(word, given) for given in given_words))
+                return sum(((1 - model1.distance(word, given)) for given in given_words))
             else:
                 return sum((model1.distance(word, given) for given in given_words))
                 
@@ -72,7 +84,7 @@ while True:
 
     freq_normalizer = sum(
         (
-            (prior * find_similarity(word) / similarity_total)
+            (1/len(word_frequencies.keys()) * find_similarity(word) / similarity_total)
             for (word, prior) in word_frequencies.items()
         )
     )
@@ -82,9 +94,15 @@ while True:
         # ensure that we dont take a word in given
         if hypothesis not in given_words:
             value = (
-                freq * (find_similarity(hypothesis) / similarity_total)
+                1/len(word_frequencies.keys()) * (find_similarity(hypothesis) / similarity_total)
             ) / freq_normalizer
             probs[hypothesis] = value
-    print("correct: " + str(probs[correct]))
     sorted_results = sorted(probs.items(), key=lambda x: x[1], reverse=True)
+    print(given_words)
     print(sorted_results[:5])
+
+    solutions.append(sorted_results[:5])
+
+with open('bayes_test_results_uniform_dat.jsonl', 'w') as f:
+  for item in solutions:
+    f.write(json.dumps(item) + '\n')

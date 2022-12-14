@@ -2,7 +2,7 @@ import os
 import openai
 import json
 
-model = "davinci:ft-personal-2022-12-06-19-07-55"  # alternative: "text-davinci-003"
+model = "text-davinci-003" # alternative: "davinci:ft-personal-2022-12-06-19-07-55"
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -21,13 +21,14 @@ for prompt in prompts:
     max_tokens=256,
     temperature=0.95,
     presence_penalty=1,
-    stop="end"
+    n=5, # number of completions to generate
+    # stop="end"
   )
   # add stop="end" for fine-tuned
-  results.append(result.choices[0].text)
+  results.append([choice.text for choice in result.choices])
 
 print(results)
 
-with open('test_results.jsonl', 'w') as f:
+with open('dat_results_standard.jsonl', 'w') as f:
   for item in results:
     f.write(json.dumps(item) + '\n')

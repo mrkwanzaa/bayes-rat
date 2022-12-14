@@ -1,30 +1,30 @@
-"Cheese"
-"Ice"
-"Answer: sore"
-"Answer: The fourth word is \"boat\". Thus, the compound words are \"showboat\", \"liferow\", and \"rowboat\"."
-"Answer:watch"
-"Answer: Coin"
-"Answer:chair"
-"Answer: Drop (dewdrop, combdrop, beedrop)"
-"Answer: soda"
-"Answer: \"Rainforest\""
-"Wheel. (Aid wheel, rubber wheel, wagon wheel)"
-"Answer: Ice"
-"Answer: \"Loss\" (safety loss, cushion loss, point loss)."
-"Answer: Night"
-" Answer: The fourth word that can be added to these three words to form a compound meaning is \"boat\": fishboat, mineboat, rushboat."
-"Answer: \"School.\" High school, district school, and house school."
-"Answer: Respect"
-"Answer: \"Piecing,\" \"Minding,\" and \"Dating.\""
-"Answer: Camp"
-"Answer: Bank"
-"Answer: The fourth word could be \"house\", forming the compound words \"printhouse\", \"berryhouse\", and \"birdhouse\"."
-"Answer: Button"
-"Answer: (washing, holding, and serving)"
-"Answer: A fourth word that could be added to form a compound meaning would be \"deck\". Thus, the words would combine to form: Cadet Deck, Capsule Deck, and Ship Deck."
-"Answer: coat"
-"Answer: Button"
-"Answer: hole"
-"Answer: bowl"
-"Answer: dioxide"
-"Answer:bow"
+["Cheese", "Cheese", "Cheese", "Cheese", "Cheese"]
+["Answer: Ice", "Ice.", "Answer: Ice", "Answer: Ice", "Ice."]
+["Answer: \"Lump\" (lump-loser, throat-lump, spot-lump).", "Answer: \"Loser, throat, spot\" could be combined to form the phrase \"loser throat spot\", which means an area of vulnerability.", "Answer: \"Pain\" (loser pain, throat pain, spot pain).", "Answer: \"Licking,\" \"Sore,\" and \"Blind.\"", "Answer: 'Pain' - Loser Pain, Throat Pain, Spot Pain."]
+["Answer:boat", "Answer:boat", "Answer:boat (showboat, lifespan, rowboat)", "Answer: Boat (showboat, lifetime, rowboat)", "Answer: boat - showboat, liferow, rowboat"]
+["Answer: watch", "Answer: watch", "Answer:watch", "Answer:watch", "Answer: watch"]
+["Answer: \"Duck\" + \"Fold\" + \"Dollar\" = \"Duck Folding Money\"", "Answer: \"Coin\" (duckcoin, foldcoin, dollarcoin).", "Answer: \"pocket\" (Duck-pocket, Fold-pocket, Dollar-pocket)", "Answer: \"Coin\" (duck-coin, fold-coin, dollar-coin).", "Answer: Coins"]
+["Answer: chair", "Answer: Chair", "Answer: Chair", "Answer: Chair", "Answer: chair"]
+["Frost", "Answer: drop (dewdrop, combover, beehive)", "Answer: Drop", "Answer:drop", "Answer: Drop"]
+["Answer: soda", "Answer: Soda. (Fountain soda, baking soda, pop soda).", "Answer: Soda", "Answer: soda", "Answer: soda"]
+["Answer: rainforest", "Answer: Rainforest", "Answer: Rainforest", "Answer: Island", "Answer: \"Rainforest\""]
+["Answer: Wheel", "Answer: \"Wheel\" (Aid Wheel, Rubber Wheel, Wagon Wheel)", "Answer: wheel", "Answer: Wheel", "Wheel"]
+["Answer: snow", "Answer: snow", "Answer: Snow", "Answer: Snow", "Answer: snow"]
+["Answer: \"Nose.\" Safety nose, cushion nose, point nose.", "Answer: \"Strike\" (safety strike, cushion strike, point strike).", "Answer: Pin", "Answer: \"Net\" (Safety Net, Cushion Net, Point Net)", "Answer: The fourth word would be \"pin\", to form the compound terms \"safety pin\", \"cushion pin\", and \"point pin\"."]
+["Answer: \"Dream - Break - Light = Dream-Break-Lighting\"", "Answer: Dream - break - light - shade.", "Answer: Dream, break, light, and shine.", "Answer: Dream - break - light - shine.", "Answer: Dream, break, light, and soul."]
+["Answer:tuna", "Answer: All (Fishall, Mineall, Rushall)", "Answer: \"Frenzy\" (fish frenzy, mine frenzy, rush frenzy).", "Answer: Combining the first three words in the prompt would result in the fourth word: \"FishmineRush.\"", "Answer: The fourth word would be \"boat\", to form the compounds \"fishboat\", \"mineboat\", and \"rushboat\"."]
+["Answer: School", "Answer: The fourth word would be \"school\" to form the compound meaning \"high school district house\".", "Answer: School", "Answer: School", "Answer: Schools"]
+["Answer: Respect", "Answer: Respect", "Answer: \"of\" (sense of courtesy, place of)", "Answer: Respect", "Answer: \"respect\" (sense of respect, courtesy respect, place of respect)."]
+["Answer: House", "Answer: \"Online\"", "Answer: \"Night\" (Piece of mind, peace of mind, dating night).", "Answer: \"Night\" (piece night, mind night, dating night)", "Answer: \"Online\""]
+["Answer: \"Camp\" (flower camp, friend camp, scout camp)", "Answer: \n\nThe fourth word is \"none\", forming the compound words \"flowernone\", \"friendnone\", and \"scoutnone\".", "Answer: \nThe fourth word is \"ship\". This would form the compound meanings \"flowership\", \"friendship\", and \"scoutship\".", "Answer: \n\nPower", "Answer: \"Camp,\" as in flower camp, friend camp, and scout camp."]
+["Answer: Bank", "Answer: bank", "Answer: Bank", "Answer: book (riverbook, notebook, accountbook)", "Answer: book (riverbook, notebook, accountbook)"]
+["Answer: \nRainbow", "Answer: \"Table\"", "Answer: house", "Answer: \"House\" (print house, berry house, bird house)", "Answer: \"Migration\""]
+["Answer: dance", "Answer: The fourth word is \"button\" - pie button, luck button, belly button.", "Answer: laughs", "Answer: Laugh (pie-laugher, luck-laugh, belly-laugh)", "Answer: Button"]
+["Answer:ware (opera-ware, hand-ware, dish-ware)", "Answer: party (opera party, hand dish, dish party)", "Answer:ware (opera-ware, hand-ware, dish-ware)", "Answer: spoon. The four words form the compound meanings \"opera spoon,\" \"hand spoon,\" and \"dish spoon.\"", "Answer:ware"]
+["Answer: Deck", "Answer: \"Crew\" (Cadet Crew, Capsule Crew, Ship Crew)", "Answer: \"Crew\"", "Answer: \"Crew\"", "Answer: Pilot"]
+["Answer: coat", "Answer: Foot", "Answer: coat", "Answer:coat", "Answer: Coat. The four words form the compound terms \"fur coat\", \"rack coat\", and \"tail coat\"."]
+["Answer:man (stickman, makerman, pointman)", "Answer: Acid. Stick acid, maker acid, point acid.", "Answer: \"Ski\" (stick-ski maker, point-ski maker).", "Answer:\nThe fourth word is \"man,\" as in \"stickman,\" \"makerman,\" and \"pointman.\"", "Answer: \nIn this instance, the fourth word would be \"man\" to form the phrases \"stickman,\" \"makerman,\" and \"pointman.\""]
+["Answer: Hole", "Answer:hole", "Answer: hole", "Answer: hole", "Answer: Hole"]
+["Answer:bowl", "Answer: Bowl", "Answer: bowl", "Answer: bowl", "Answer: Salt"]
+["Answer: Foot/Footprint", "Answer: dioxide", "Answer: \"Monoxide\"", "Answer: dioxide", "Answer:  Powder"]
+["Answer: bow", "Answer:  Knot. (Crossknot, Rainknot, Tieknot)", "Answer: \"bow\" (crossbow, rainbow, tie-bow)", "Answer: \"Bow\" (Crossbow, Rainbow, Tietie)", "Answer: bow"]

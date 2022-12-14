@@ -55,3 +55,16 @@ with open('data_prepared.jsonl', 'r') as f:
 with open("test_data.jsonl", 'w') as f:
     for item in pairs:
         f.write(json.dumps(item['prompt']) + "\n")
+
+filtered_questions = questions.copy()
+# create a seperate test file with prompts not in data_prepared
+with open('data_prepared.jsonl', 'r') as f:
+  for line in f:
+    for q in questions:
+      if json.dumps(generate_prompt(q)) in line:
+        filtered_questions.remove(q)
+
+
+with open("bayes_test_data.jsonl", 'w') as f:
+    for item in filtered_questions:
+        f.write(json.dumps(item) + "\n")        
