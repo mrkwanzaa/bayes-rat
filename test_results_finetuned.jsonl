@@ -7,24 +7,25 @@
 [" chair ", " chair ", " rock ", " chair ", " chair "]
 [" honey ", " honey ", " honey ", " honey ", " honey "]
 [" soda ", " cake ", " soda ", " soda ", " cold "]
-[" island ", " fruit ", " island ", " rain ", " fruit "]
+[" island ", " fruit ", " island ", " rain ", " fruit "] # 1 wrong
 [" flat ", " wheels ", " band ", " tire ", " slug "]
 [" sugar ", " snow ", " snow ", " sun ", " sugar "]
-[" door ", " stop ", " foot ", " seat ", " seat "]
-[" moon ", " stop ", " flash ", " lamp ", " fall "]
+[" door ", " stop ", " foot ", " seat ", " seat "] # 1 wrong
+[" moon ", " stop ", " flash ", " lamp ", " fall "] # 1 wrong
 [" gold ", " gold ", " gold ", " gold ", " gold "]
 [" school ", " power ", " state ", " judge ", " school "]
 [" sign ", " table ", " common ", " place ", " common "]
-[" match ", " match ", " match ", " match ", " match "]
+[" match ", " match ", " match ", " match ", " match "] # wrong
 [" girl ", " boy ", " girl ", " girl ", " girl "]
 [" cash ", " cash ", " bank ", " money ", " money "]
 [" blue ", " black ", " blue ", " blue ", " cherry "]
-[" blossom ", " apple ", " full ", " full ", " full "]
-[" good ", " glass ", " face ", " China ", " face "]
+[" blossom ", " apple ", " full ", " full ", " full "] # wrong
+[" good ", " glass ", " face ", " China ", " face "] # wrong
 [" space ", " space ", " nuclear ", " space ", " moon "]
 [" full ", " cat ", " coat ", " full ", " full "]
-[" pen ", " car ", " pencil ", " pin ", " pin "]
-[" tree ", " dog ", " close ", " quiet ", " door "]
-[" fluff ", " fl ", " milk ", " horn ", " shark "]
-[" coal ", " black ", " coal ", " coal ", " coal "]
-[" shower ", " box ", " stop ", " stop ", " stop "]
+[" pen ", " car ", " pencil ", " pin ", " pin "] 
+[" tree ", " dog ", " close ", " quiet ", " door "] # wrong
+[" fluff ", " fl ", " milk ", " horn ", " shark "]  # wrong
+[" coal ", " black ", " coal ", " coal ", " coal "] # wrong
+[" shower ", " box ", " stop ", " stop ", " stop "] # wrong
+10 wrong out of 30
