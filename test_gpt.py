@@ -8,7 +8,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 prompts = []
 
-with open('test_data.jsonl', 'r') as f:
+with open('dat_test_data.jsonl', 'r') as f:
   for line in f:
     prompts.append(json.loads(line))
 
