@@ -23,9 +23,9 @@
 [" good ", " glass ", " face ", " China ", " face "] # wrong
 [" space ", " space ", " nuclear ", " space ", " moon "]
 [" full ", " cat ", " coat ", " full ", " full "]
-[" pen ", " car ", " pencil ", " pin ", " pin "] 
+[" pen ", " car ", " pencil ", " pin ", " pin "] # wrong
 [" tree ", " dog ", " close ", " quiet ", " door "] # wrong
 [" fluff ", " fl ", " milk ", " horn ", " shark "]  # wrong
 [" coal ", " black ", " coal ", " coal ", " coal "] # wrong
 [" shower ", " box ", " stop ", " stop ", " stop "] # wrong
-10 wrong out of 30
+11 wrong out of 30
